@@ -292,7 +292,7 @@ ul {
 
 /* Fallback background image when video is missing */
 .home-section {
-    background-image: url('public/images/home-content-bg.jpg');
+    background-image: url('images/home-content-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
