@@ -1,206 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ricky Fernando - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ricky Fernando | Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Preloader / Rocket Launching Scene -->
-    <div id="preloader" class="preloader">
-        <div class="rocket-container">
-            <!-- SVG Rocket -->
-            <svg class="rocket-svg" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
-                <rect x="35" y="10" width="30" height="80" fill="#ff6b6b" rx="5"/>
-                <circle cx="50" cy="25" r="8" fill="#87ceeb" stroke="#fff" stroke-width="1"/>
-                <polygon points="35,70 15,85 25,95" fill="#ffa500"/>
-                <polygon points="65,70 85,85 75,95" fill="#ffa500"/>
-                <polygon points="35,90 20,110 30,105" fill="#ff8c00"/>
-                <polygon points="65,90 80,110 70,105" fill="#ff8c00"/>
-                <polygon points="35,10 50,0 65,10" fill="#ffff00"/>
-                <line x1="50" y1="20" x2="50" y2="80" stroke="#fff" stroke-width="1" opacity="0.5"/>
-            </svg>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="C:\Users\Create Your Music\Music\Aplikasi\new-portfolioricky\asset\logo.png" alt="Logo" class="logo">
+      <span>Ricky Fernando</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="#"></a>
+    </div>
+  </nav>
 
-            <div class="flame-container" id="flame-container"></div>
-            <div class="smoke-container" id="smoke-container"></div>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <!-- Glow Effect -->
+    <div class="glow-effect"></div>
+    
+    <!-- Canvas untuk bintang + partikel -->
+    <canvas id="bg-canvas"></canvas>
 
-            <p id="clickToLaunch">🚀 Start 🚀</p>
+    <!-- Orbit Skill -->
+    <div class="skills-orbit">
+      <div class="orbit-line"></div>
+      <!-- Ikon skill ditambahkan via JS -->
+    </div>
+
+    <div class="hero-content">
+      <span class="badge">Web Developer Portfolio</span>
+      <h1>Providing <span class="gradient-text">the best</span> project experience.</h1>
+      <p>I'm Web Developer with experience in Website and Software development. Check out my Projects.</p>
+      <a href="#projects" class="btn-learn">Learn more</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Tech Stack:</p>
+          <p>HTML, CSS, Javascript, Bootstrap, PHP, Laravel framework, WordPress, MySQL & VBA</p>
         </div>
-        <div class="launch-background" style="background-image: url('assets/images/background.jpg');"></div>
+      </div>
     </div>
+  </section>
 
-    <!-- Main Content / Home Section -->
-   <main id="main-content" class="main-content hidden">
-        <header class="header">
-            <div class="logo">Ricky Fernando</div>
-            <button id="menu-toggle" class="menu-toggle">
-                <img src="assets/images/menu-icon.png" alt="Menu" class="hamburger-icon" />
-            </button>
-        </header> 
-
-        <!-- HOME SECTION: now contains a background video -->
-        <section id="home" class="section home-section">
-            <!-- Background video element (autoplay muted loop) -->
-            <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/images/home-content-bg.jpg" aria-hidden="false">
-                <source src="assets/videos/electrons.mp4" type="video/mp4" />
-                <!-- Fallback text -->
-                Video background not supported in this browser.
-            </video>
-
-            <div class="home-content-wrapper">
-                <div class="home-slider">
-                    <div class="slide active" data-id="1">
-                        <h1>Home</h1>
-                    </div>
-                    <div class="slide" data-id="2">
-                        <h1>About</h1>
-                    </div>
-                    <div class="slide" data-id="3">
-                        <h1>Projects</h1>
-                    </div>
-                    <div class="slide" data-id="4">
-                        <h1>Contact</h1>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <span class="slider-dot active" data-slide="1"></span>
-                    <span class="slider-dot" data-slide="2"></span>
-                    <span class="slider-dot" data-slide="3"></span>
-                    <span class="slider-dot" data-slide="4"></span>
-                </div>
-                <div class="copyright">
-                    <p>2025 © Ricky Fernando</p>
-                </div>
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-item">
+          <img src="C:\Users\Create Your Music\Music\Aplikasi\new-portfolioricky\asset\konveksi_landing.jpg" alt="Konveksi Landing Page" class="project-img">
+          <div class="project-info">
+            <h3>Konveksi Landing Page</h3>
+            <p>Konveksi Landing Page</p>
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Javascript</span>
             </div>
-        </section>
-
-        <section id="about" class="section about-section hidden">
-            <div class="section-content">
-                <h2>About Me</h2>
-                <p>Halo, saya Ricky Fernando, seorang Freelancer Web Developer Menciptakan solusi Web/Aplikasi yang inovatif & efektif. Desain Kreatif & Estetik.</p>
-                <p>Tech Stack: HTML, CSS, JavaScript, React, PHP, framework Laravel, Wordpress, MySQL, PostgreSQL, VBA, Visualisasi Data.</p>
-                <p>Mari wujudkan Project digital Anda dengan kualitas dan impact maksimal.</p>
+          </div>
+        </div>
+        <div class="project-item">
+          <img src="C:\Users\Create Your Music\Music\Aplikasi\new-portfolioricky\asset\marketing_landing_page_3D.jpg" alt="Marketing Landing Page" class="project-img">
+          <div class="project-info">
+            <h3>Marketing Landing Page</h3>
+            <p>Marketing Landing Page dengan design 3D.</p>
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Javascript</span>
             </div>
-        </section>
-
-        <section id="projects" class="section projects-section hidden">
-            <div class="projects-wrapper">
-                <div class="projects-header">
-                    <h2>My Projects</h2>
-                    <p>A selection of projects that showcase my experience in web development, UI design, and backend engineering.</p>
-                </div>
-
-                <div class="projects-container">
-                    <div class="project-card accent-1">
-                        <div class="project-image">
-                            <img src="assets\images\marketing_landing_page_3D.jpg" alt="Marketing Agency Landing 3D">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Marketing Agency Landing 3D</h3>
-                            <p class="project-description">Marketing Agency Landing 3D.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">HTML</span>
-                                <span class="tech-badge">CSS</span>
-                                <span class="tech-badge">Javascript</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card accent-2">
-                        <div class="project-image">
-                            <img src="assets\images\konveksi_landing.jpg" alt="Konveksi Landing">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Konveksi Landing</h3>
-                            <p class="project-description">Konveksi Landing.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">HTML</span>
-                                <span class="tech-badge">CSS</span>
-                                <span class="tech-badge">Javascript</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card accent-3">
-                        <div class="project-image">
-                            <img src="assets\images\self-print.jpg" alt="Self Print Platform">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Self Print Platform</h3>
-                            <p class="project-description">Self Print Platform.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">HTML</span>
-                                <span class="tech-badge">CSS</span>
-                                <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">PHP</span>
-                                <span class="tech-badge">Laravel</span>
-                                <span class="tech-badge">API</span>
-                                <span class="tech-badge">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card accent-4">
-                        <div class="project-image">
-                            <img src="assets\images\tracking-asuransi-kendaraan.png" alt="Sistem Manajemen Asuransi">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Sistem Manajemen Asuransi</h3>
-                            <p class="project-description">Sistem Manajemen Asuransi.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">VBA</span>
-                                <span class="tech-badge">Excel</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="project-item">
+          <img src="C:\Users\Create Your Music\Music\Aplikasi\new-portfolioricky\asset\self-print.jpg" alt="Self Print Platform" class="project-img">
+          <div class="project-info">
+            <h3>Self Print Platform</h3>
+            <p>Self Print Platform.</p>
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>PHP</span>
+              <span>Laravel</span>
+              <span>API</span>
+              <span>MySQL</span>
             </div>
-        </section>
-
-        <section id="contact" class="section contact-section hidden">
-            <div class="section-content">
-                <h2>Contact Me</h2>
-                <p>Tertarik untuk bekerja sama? Jangan ragu untuk menghubungi saya!</p>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nama:</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Pesan:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Kirim Pesan</button>
-                </form>
-                <div class="social-links">
-                    <a href="#" target="_blank">LinkedIn</a>
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Instagram</a>
-                </div>
+          </div>
+        </div>
+        <div class="project-item">
+          <img src="C:\Users\Create Your Music\Music\Aplikasi\new-portfolioricky\asset\tracking-asuransi-kendaraan.png" alt="Tracking Asuransi Kendaraan" class="project-img">
+          <div class="project-info">
+            <h3>Tracking Asuransi Kendaraan</h3>
+            <p>Tracking Asuransi Kendaraan.</p>
+            <div class="tech-stack">
+              <span>VBA</span>
+              <span>Excel</span>
             </div>
-        </section>
-    </main>
-
-    <!-- Overlay Menu -->
-    <div id="overlay-menu" class="overlay-menu">
-        <button id="close-menu" class="close-menu">&times;</button>
-        <nav>
-            <ul>
-                <li><a href="#home" data-section="home">Home</a></li>
-                <li><a href="#about" data-section="about">About</a></li>
-                <li><a href="#projects" data-section="projects">Projects</a></li>
-                <li><a href="#contact" data-section="contact">Contact</a></li>
-            </ul>
-        </nav>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact me if you interested</h2>
+      <div class="contact-buttons">
+      <!-- Email Button -->
+      <a href="mailto:fernandorickyy7@gmail.com" class="btn-contact email">
+        Sent Mail
+        </a>
+        <a href="https://wa.me/6285282960683?text=Hi%20Ricky,%20saya%20tertarik%20dengan%20project%20Anda" class="btn-contact whatsapp" target="_blank">
+          Chat via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
