@@ -60,7 +60,7 @@ body { font-family: 'Inter', sans-serif; background:#000; color:#fff; overflow-x
   width:32px; height:32px; filter:brightness(0) invert(1);
 }
 .skill-item:hover img {
-  filter:brightness(0);
+  filter:brightness(0) saturate(100%) hue-rotate(200deg); /* Cyan neon */
 }
 
 /* Hero Content */

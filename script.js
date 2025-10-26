@@ -2,14 +2,26 @@ const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let stars = [];
 let skillIcons = [
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
+  // HTML
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+  // CSS
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+  // JavaScript
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
+  // Bootstrap
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
+  // PHP
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+  // Laravel
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg',
+  // WordPress
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg',
+  // MySQL
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+  // VBA (fallback: Excel icon dari Icons8, karena VBA jarang punya ikon khusus)
+  'https://img.icons8.com/color/48/microsoft-excel.png',
+  // Linux
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
 ];
 let skillElements = [];
 
