@@ -96,19 +96,25 @@ function createMobileSlider() {
   const dotsContainer = document.querySelector('.slider-dots');
   if (!track || !dotsContainer) return;
 
-  // Kosongkan
+  // Kosongkan dulu
   track.innerHTML = '';
   dotsContainer.innerHTML = '';
 
-  // Tambah skill (duplikat untuk loop halus)
+  // Duplikat array untuk loop halus
   [...skillIcons, ...skillIcons].forEach((icon, i) => {
     const item = document.createElement('div');
     item.className = 'slider-item';
-    
+
     const img = document.createElement('img');
     img.src = icon;
     img.alt = 'Skill';
-    
+    img.loading = 'lazy';
+
+    // Fallback jika gambar gagal
+    img.onerror = () => {
+      img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjMzMzIj48L3JlY3Q+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjY2NjIj5TZjwvdGV4dD48L3N2Zz4=';
+    };
+
     item.appendChild(img);
     track.appendChild(item);
   });
@@ -122,7 +128,8 @@ function createMobileSlider() {
     dotsContainer.appendChild(dot);
   });
 
-  // Reset posisi
+  // Reset ke slide 0
+  currentSlide = 0;
   goToSlide(0);
   startAutoSlide();
 }
@@ -168,17 +175,18 @@ function stopAutoSlide() {
 }
 
 // Restart saat resize
-window.addEventListener('resize', () => {
+// Panggil saat load
+window.addEventListener('load', () => {
+  createSkillOrbit();
   if (window.innerWidth <= 768) {
-    createMobileSlider();
+    createMobileSlider(); // TAMBAHKAN INI
   }
 });
 
-// Init
-window.addEventListener('load', () => {
-  // ... kode sebelumnya ...
+// Panggil saat resize
+window.addEventListener('resize', () => {
   if (window.innerWidth <= 768) {
-    createMobileSlider();
+    createMobileSlider(); // TAMBAHKAN INI
   }
 });
 

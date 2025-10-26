@@ -347,14 +347,15 @@ h1 { font-size:60px; margin:20px 0; }
   }
 
   .slider-item img {
-    width: 32px;
-    height: 32px;
-    filter: brightness(0) invert(1);
-  }
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
 
-  .slider-item:hover img {
-    filter: brightness(0);
-  }
+.slider-item:hover img {
+  filter: drop-shadow(0 0 15px #00ffff);
+  transform: scale(1.2);
+}
 
   .slider-dots {
     display: flex;
