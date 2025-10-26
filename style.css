@@ -121,74 +121,108 @@ h1 { font-size:60px; margin:20px 0; }
   .skill-item img { width:26px; height:26px; }
 }
 
-/* -------------------------------------------------
-   Mobile: Auto Slider Skill
-   ------------------------------------------------- */
+/* ========================================
+   MOBILE: SKILL SLIDER – CENTER & RAPI
+   ======================================== */
 .mobile-skills-slider {
-  display: none;               /* Hanya muncul di mobile */
-  margin-top: 30px;
-  padding: 0 20px;
+  display: none;
+  margin: 35px auto 0;
+  max-width: 360px;
+  width: 100%;
+  padding: 0 15px;
   overflow: hidden;
 }
+
 .slider-container {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0Narrow, 0.2);
+  padding: 12px 0;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
 }
+
 .slider-track {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
 }
+
 .slider-item {
-  min-width: 60px;
-  height: 60px;
-  margin: 0 8px;
-  background: rgba(255,255,255,0.08);
+  min-width: 56px;
+  height: 56px;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid rgba(0,255,255,0.3);
-  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(0, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .slider-item:hover {
   background: #00ffff;
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(0,255,255,0.7);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  border-color: #00ffff;
 }
+
 .slider-item img {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   filter: brightness(0) invert(1);
 }
+
 .slider-item:hover img {
   filter: brightness(0);
 }
 
-/* Dots */
+/* Dots – Center */
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 15px;
-}
-.slider-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  transition: 0.3s;
-}
-.slider-dot.active {
-  background: #00ffff;
-  transform: scale(1.3);
+  margin-top: 18px;
 }
 
-/* -------------------------------------------------
-   Mobile Only – sembunyikan orbit, tampilkan slider
-   ------------------------------------------------- */
+.slider-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background: #00ffff;
+  transform: scale(1.4);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* ========================================
+   MOBILE ONLY: Ganti Orbit → Slider
+   ======================================== */
 @media (max-width: 768px) {
-  .skills-orbit { display: none !important; }
-  .mobile-skills-slider { display: block; }
+  .skills-orbit { 
+    display: none !important; 
+  }
+  .mobile-skills-slider { 
+    display: block; 
+  }
+
+  /* Pastikan hero content center */
+  .hero-content {
+    text-align: center;
+    padding: 0 20px;
+  }
+  .btn-learn {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+  }
 }

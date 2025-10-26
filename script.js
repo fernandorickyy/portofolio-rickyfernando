@@ -119,11 +119,22 @@ function goToSlide(index) {
   const track = document.querySelector('.slider-track');
   const items = document.querySelectorAll('.slider-item');
   const dots = document.querySelectorAll('.slider-dot');
+  const container = document.querySelector('.slider-container');
   
-  currentSlide = index;
-  const itemWidth = items[0].offsetWidth + 16; // 8px margin x2
-  track.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
+  if (!track || items.length === 0 || !container) return;
 
+  currentSlide = index;
+  
+  // Hitung lebar 1 item + margin (10px kiri + 10px kanan = 20px)
+  const itemWidth = items[0].offsetWidth + 20;
+  const containerWidth = container.offsetWidth;
+  
+  // Hitung offset agar item aktif berada di tengah container
+  const offset = (containerWidth / 2) - (itemWidth / 2) - (currentSlide * itemWidth);
+  
+  track.style.transform = `translateX(${offset}px)`;
+
+  // Update dots
   dots.forEach((dot, i) => {
     dot.classList.toggle('active', i === currentSlide);
   });
