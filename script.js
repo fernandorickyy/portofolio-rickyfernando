@@ -125,14 +125,15 @@ function goToSlide(index) {
 
   currentSlide = index;
   
-  // Hitung lebar 1 item + margin (10px kiri + 10px kanan = 20px)
-  const itemWidth = items[0].offsetWidth + 20;
+  const itemWidth = items[0].offsetWidth + 20; // 10px margin x2
   const containerWidth = container.offsetWidth;
   
-  // Hitung offset agar item aktif berada di tengah container
-  const offset = (containerWidth / 2) - (itemWidth / 2) - (currentSlide * itemWidth);
+  // Hitung offset agar item aktif di TENGAH
+  const totalOffset = currentSlide * itemWidth;
+  const centerOffset = (containerWidth / 2) - (itemWidth / 2);
+  const finalOffset = centerOffset - totalOffset;
   
-  track.style.transform = `translateX(${offset}px)`;
+  track.style.transform = `translateX(${finalOffset}px)`;
 
   // Update dots
   dots.forEach((dot, i) => {
