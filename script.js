@@ -75,6 +75,36 @@ function createSkillOrbit() {
   });
 }
 
+// Mobile: Horizontal Skill Scroll
+function createMobileSkills() {
+  const container = document.querySelector('.skill-scroll');
+  if (!container) return;
+  container.innerHTML = '';
+
+  skillIcons.forEach(icon => {
+    const item = document.createElement('div');
+    item.className = 'skill-item';
+    
+    const img = document.createElement('img');
+    img.src = icon;
+    img.alt = 'Skill';
+    
+    item.appendChild(img);
+    container.appendChild(item);
+  });
+}
+
+// Panggil saat load & resize
+window.addEventListener('load', () => {
+  // ... kode sebelumnya ...
+  createMobileSkills();
+});
+
+window.addEventListener('resize', () => {
+  // ... kode sebelumnya ...
+  createMobileSkills();
+});
+
 let rotation = 0;
 function animateOrbit() {
   rotation += 0.003;
