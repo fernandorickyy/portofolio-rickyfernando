@@ -230,3 +230,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// FOOTER: Update tahun otomatis
+document.addEventListener('DOMContentLoaded', () => {
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
