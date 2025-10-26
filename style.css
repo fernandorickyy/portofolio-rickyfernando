@@ -121,51 +121,74 @@ h1 { font-size:60px; margin:20px 0; }
   .skill-item img { width:26px; height:26px; }
 }
 
-/* Mobile: Horizontal Skill Scroll */
-.mobile-skills-horizontal {
-  display: none;
+/* -------------------------------------------------
+   Mobile: Auto Slider Skill
+   ------------------------------------------------- */
+.mobile-skills-slider {
+  display: none;               /* Hanya muncul di mobile */
   margin-top: 30px;
   padding: 0 20px;
   overflow: hidden;
 }
-.skill-scroll {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 12px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.slider-container {
+  overflow: hidden;
+  border-radius: 16px;
 }
-.skill-scroll::-webkit-scrollbar { display: none; }
-.skill-scroll .skill-item {
-  min-width: 50px;
-  height: 50px;
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slider-item {
+  min-width: 60px;
+  height: 60px;
+  margin: 0 8px;
   background: rgba(255,255,255,0.08);
-  border-radius: 14px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0,255,255,0.2);
-  backdrop-filter: blur(5px);
+  border: 1.5px solid rgba(0,255,255,0.3);
+  backdrop-filter: blur(8px);
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
-.skill-scroll .skill-item:hover {
+.slider-item:hover {
   background: #00ffff;
-  transform: scale(1.15);
-  box-shadow: 0 0 20px rgba(0,255,255,0.6);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0,255,255,0.7);
 }
-.skill-scroll .skill-item img {
-  width: 28px;
-  height: 28px;
+.slider-item img {
+  width: 32px;
+  height: 32px;
   filter: brightness(0) invert(1);
 }
-.skill-scroll .skill-item:hover img {
+.slider-item:hover img {
   filter: brightness(0);
 }
 
-/* Mobile: Ganti orbit jadi horizontal */
+/* Dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: 0.3s;
+}
+.slider-dot.active {
+  background: #00ffff;
+  transform: scale(1.3);
+}
+
+/* -------------------------------------------------
+   Mobile Only – sembunyikan orbit, tampilkan slider
+   ------------------------------------------------- */
 @media (max-width: 768px) {
   .skills-orbit { display: none !important; }
-  .mobile-skills-horizontal { display: block; }
+  .mobile-skills-slider { display: block; }
 }

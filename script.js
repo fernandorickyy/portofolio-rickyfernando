@@ -75,34 +75,87 @@ function createSkillOrbit() {
   });
 }
 
-// Mobile: Horizontal Skill Scroll
-function createMobileSkills() {
-  const container = document.querySelector('.skill-scroll');
-  if (!container) return;
-  container.innerHTML = '';
+// === MOBILE: AUTO SLIDER ===
+let currentSlide = 0;
+let sliderInterval;
 
-  skillIcons.forEach(icon => {
+function createMobileSlider() {
+  const track = document.querySelector('.slider-track');
+  const dotsContainer = document.querySelector('.slider-dots');
+  if (!track || !dotsContainer) return;
+
+  // Kosongkan
+  track.innerHTML = '';
+  dotsContainer.innerHTML = '';
+
+  // Tambah skill (duplikat untuk loop halus)
+  [...skillIcons, ...skillIcons].forEach((icon, i) => {
     const item = document.createElement('div');
-    item.className = 'skill-item';
+    item.className = 'slider-item';
     
     const img = document.createElement('img');
     img.src = icon;
     img.alt = 'Skill';
     
     item.appendChild(img);
-    container.appendChild(item);
+    track.appendChild(item);
+  });
+
+  // Tambah dots
+  skillIcons.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'slider-dot';
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  });
+
+  // Reset posisi
+  goToSlide(0);
+  startAutoSlide();
+}
+
+function goToSlide(index) {
+  const track = document.querySelector('.slider-track');
+  const items = document.querySelectorAll('.slider-item');
+  const dots = document.querySelectorAll('.slider-dot');
+  
+  currentSlide = index;
+  const itemWidth = items[0].offsetWidth + 16; // 8px margin x2
+  track.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
   });
 }
 
-// Panggil saat load & resize
-window.addEventListener('load', () => {
-  // ... kode sebelumnya ...
-  createMobileSkills();
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % skillIcons.length;
+  goToSlide(currentSlide);
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  sliderInterval = setInterval(nextSlide, 2000); // Ganti slide tiap 2 detik
+}
+
+function stopAutoSlide() {
+  if (sliderInterval) clearInterval(sliderInterval);
+}
+
+// Restart saat resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 768) {
+    createMobileSlider();
+  }
 });
 
-window.addEventListener('resize', () => {
+// Init
+window.addEventListener('load', () => {
   // ... kode sebelumnya ...
-  createMobileSkills();
+  if (window.innerWidth <= 768) {
+    createMobileSlider();
+  }
 });
 
 let rotation = 0;
