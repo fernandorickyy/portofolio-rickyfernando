@@ -2,26 +2,26 @@ const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let stars = [];
 let skillIcons = [
-  // HTML
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  // CSS
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+  // HTML5
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
+  // CSS3
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
   // JavaScript
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
   // Bootstrap
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',
   // PHP
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg',
   // Laravel
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',
   // WordPress
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg',
   // MySQL
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-  // VBA (fallback: Excel icon dari Icons8, karena VBA jarang punya ikon khusus)
-  'https://img.icons8.com/color/48/microsoft-excel.png',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
+  // VBA → Ganti jadi Excel (Devicon tidak punya VBA)
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
   // Linux
-  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg'
 ];
 let skillElements = [];
 

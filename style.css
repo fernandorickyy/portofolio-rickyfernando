@@ -57,10 +57,13 @@ body { font-family: 'Inter', sans-serif; background:#000; color:#fff; overflow-x
   box-shadow:0 0 25px #00ffff; 
 }
 .skill-item img {
-  width:32px; height:32px; filter:brightness(0) invert(1);
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
 }
 .skill-item:hover img {
-  filter:brightness(0) saturate(100%) hue-rotate(200deg); /* Cyan neon */
+  filter: drop-shadow(0 0 15px #00ffff);
+  transform: scale(1.2);
 }
 
 /* Hero Content */
