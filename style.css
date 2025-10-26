@@ -205,13 +205,40 @@ h1 { font-size:60px; margin:20px 0; }
 }
 
 /* ========================================
-   MOBILE: HERO & SKILL SLIDER – RAPI & CENTER
+   MOBILE: HERO & NAVBAR – FIX BADGE TERTUTUP
    ======================================== */
 @media (max-width: 768px) {
-  /* Hero Content */
+  /* Navbar – lebih kecil & transparan */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 20px !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-brand {
+    font-size: 17px;
+  }
+
+  .nav-menu {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  /* Hero – beri jarak dari navbar */
   .hero {
     min-height: 100vh;
-    padding: 20px;
+    padding: 100px 20px 40px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -228,11 +255,16 @@ h1 { font-size:60px; margin:20px 0; }
     align-items: center;
   }
 
+  /* Badge – PASTI TIDAK TERTUTUP */
   .badge {
     font-size: 13px !important;
-    padding: 7px 16px !important;
-    margin-bottom: 20px !important;
+    padding: 8px 18px !important;
+    margin-bottom: 22px !important;
+    background: linear-gradient(45deg, #8a2be2, #4a00e0);
+    border-radius: 50px;
     display: inline-block;
+    position: relative;
+    z-index: 10;
   }
 
   h1 {
@@ -253,8 +285,8 @@ h1 { font-size:60px; margin:20px 0; }
   }
 
   .btn-learn {
-    margin: 25px auto 35px !important;
-    padding: 14px 32px !important;
+    margin: 28px auto 38px !important;
+    padding: 14px 34px !important;
     font-size: 16px !important;
     display: block;
     width: fit-content;
@@ -321,7 +353,6 @@ h1 { font-size:60px; margin:20px 0; }
     filter: brightness(0);
   }
 
-  /* Dots – CENTER */
   .slider-dots {
     display: flex;
     justify-content: center;
